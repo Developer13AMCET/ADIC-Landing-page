@@ -1,0 +1,2141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ADIC</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<style>
+    /*==================================================
+                GLOBAL RESET
+==================================================*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#ffffff;
+    color:#222;
+    line-height:1.6;
+    overflow-x:hidden;
+    min-height:100vh;
+}
+
+img{
+    display:block;
+    max-width:100%;
+    height:auto;
+}
+
+input,
+textarea,
+select,
+button{
+    font:inherit;
+}
+
+a{
+    text-decoration:none;
+}
+
+ul{
+    list-style:none;
+}
+
+/*==================================================
+                    NAVBAR
+==================================================*/
+
+.navbar{
+
+    width:100%;
+    min-height:90px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:18px 5%;
+
+    background:#ffffff;
+
+    border-bottom:1px solid #eaeaea;
+
+    position:sticky;
+    top:0;
+    left:0;
+
+    z-index:1000;
+}
+
+/*==================================================
+                    LOGO AREA
+==================================================*/
+
+.logo{
+
+    display:flex;
+    align-items:center;
+    gap:16px;
+
+    flex-shrink:0;
+}
+
+.logo img{
+
+    width:60px;
+    height:auto;
+}
+
+.logo p{
+
+    font-size:13px;
+    font-weight:bold;
+    color:#333;
+    line-height:1.4;
+}
+
+.college-logo{
+
+    width:auto;
+    height:42px;
+}
+
+.college-info{
+
+    transform:scale(2.2);
+
+    margin-left:26px;
+    margin-right:24px;
+    margin-top:5px;
+}
+
+.vrline{
+
+    border-left:1.5px solid #d6d6d6;
+
+    height:47px;
+}
+
+/*==================================================
+                NAVIGATION LINKS
+==================================================*/
+
+.nav-links{
+
+    display:flex;
+    align-items:center;
+
+    gap:40px;
+
+    flex-wrap:wrap;
+}
+
+.nav-links li{
+
+    list-style:none;
+}
+
+.nav-links a{
+
+    color:#111827;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    transition:0.3s;
+}
+
+.nav-links a:hover{
+
+    color:#2563EB;
+}
+
+.nav-links a.active{
+
+    color:#2563EB;
+
+    position:relative;
+}
+
+.nav-links a.active::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    bottom:-10px;
+
+    width:100%;
+    height:3px;
+
+    border-radius:10px;
+
+    background:#2563EB;
+}
+
+/*==================================================
+                TABLET RESPONSIVE
+==================================================*/
+
+@media(max-width:1024px){
+
+    .navbar{
+
+        padding:18px 30px;
+    }
+
+    .nav-links{
+
+        gap:22px;
+    }
+
+    .logo img{
+
+        width:55px;
+    }
+
+    .college-info{
+
+        transform:scale(1.8);
+
+        margin-left:18px;
+        margin-right:18px;
+    }
+}
+
+/*==================================================
+                MOBILE RESPONSIVE
+==================================================*/
+
+@media(max-width:768px){
+
+    .navbar{
+
+        flex-direction:column;
+
+        justify-content:center;
+
+        gap:18px;
+
+        padding:20px;
+    }
+
+    .logo{
+
+        flex-wrap:wrap;
+
+        justify-content:center;
+
+        gap:12px;
+    }
+
+    .college-info{
+
+        transform:none;
+
+        margin:0;
+    }
+
+    .vrline{
+
+        display:none;
+    }
+
+    .nav-links{
+
+        width:100%;
+
+        justify-content:center;
+
+        gap:14px;
+    }
+
+    .nav-links a{
+
+        font-size:15px;
+    }
+
+    .logo img{
+
+        width:48px;
+    }
+
+    .logo p{
+
+        text-align:center;
+    }
+}
+/*==================================================
+                    HERO SECTION
+==================================================*/
+
+.hero{
+
+    width:100%;
+
+    min-height:78vh;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:50px;
+
+    padding:40px 5%;
+}
+
+/*==================================================
+                HERO LEFT CONTENT
+==================================================*/
+
+.hero-copy{
+
+    flex:1;
+
+    min-width:320px;
+}
+
+.eyebrow{
+
+    color:#2563EB;
+
+    font-size:15px;
+
+    font-weight:700;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+
+    margin-bottom:22px;
+}
+
+.hero-copy h1{
+
+    font-size:clamp(42px,6vw,78px);
+
+    font-weight:800;
+
+    line-height:1.05;
+
+    color:#0F172A;
+
+    margin-bottom:25px;
+}
+
+.blue{
+
+    color:#2563EB;
+}
+
+.hero-copy p{
+
+    max-width:620px;
+
+    font-size:20px;
+
+    color:#64748B;
+
+    line-height:1.9;
+}
+
+/*==================================================
+                HERO IMAGE
+==================================================*/
+
+.hero-image{
+
+    flex:1;
+
+    display:flex;
+
+    justify-content:flex-end;
+
+    align-items:center;
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+.hero-image img{
+
+    width:100%;
+
+    max-width:680px;
+
+    object-fit:contain;
+
+    filter:drop-shadow(0 15px 35px rgba(0,0,0,.15));
+
+    transition:
+    transform .4s ease,
+    filter .4s ease;
+
+    -webkit-mask-image:
+    radial-gradient(
+        ellipse at center,
+        rgba(0,0,0,1) 68%,
+        rgba(0,0,0,.90) 80%,
+        rgba(0,0,0,.45) 92%,
+        transparent 100%
+    );
+
+    mask-image:
+    radial-gradient(
+        ellipse at center,
+        rgba(0,0,0,1) 68%,
+        rgba(0,0,0,.90) 80%,
+        rgba(0,0,0,.45) 92%,
+        transparent 100%
+    );
+}
+
+.hero-image img:hover{
+
+    transform:scale(1.02);
+
+    filter:drop-shadow(0 20px 45px rgba(0,0,0,.18));
+}
+
+/*==================================================
+                LARGE DESKTOP
+==================================================*/
+
+@media(min-width:1400px){
+
+    .hero{
+
+        max-width:1500px;
+
+        margin:auto;
+    }
+
+    .hero-copy h1{
+
+        font-size:82px;
+    }
+
+    .hero-copy p{
+
+        font-size:22px;
+    }
+
+    .hero-image img{
+
+        max-width:760px;
+    }
+}
+
+/*==================================================
+                TABLET
+==================================================*/
+
+@media(max-width:1024px){
+
+    .hero{
+
+        gap:35px;
+
+        padding:40px;
+    }
+
+    .hero-copy h1{
+
+        font-size:56px;
+    }
+
+    .hero-copy p{
+
+        font-size:18px;
+    }
+
+    .hero-image{
+
+        justify-content:center;
+    }
+
+    .hero-image img{
+
+        max-width:520px;
+    }
+}
+
+/*==================================================
+                MOBILE
+==================================================*/
+
+@media(max-width:768px){
+
+    .hero{
+
+        flex-direction:column;
+
+        text-align:center;
+
+        justify-content:center;
+
+        gap:30px;
+
+        padding:40px 20px;
+
+        min-height:auto;
+    }
+
+    .hero-copy{
+
+        width:100%;
+
+        min-width:100%;
+    }
+
+    .hero-copy p{
+
+        margin:auto;
+    }
+
+    .hero-image{
+
+        width:100%;
+
+        justify-content:center;
+    }
+
+    .hero-image img{
+
+        width:95%;
+
+        max-width:420px;
+    }
+}
+
+/*==================================================
+                SMALL MOBILE
+==================================================*/
+
+@media(max-width:480px){
+
+    .hero{
+
+        padding:30px 18px;
+    }
+
+    .eyebrow{
+
+        font-size:13px;
+    }
+
+    .hero-copy h1{
+
+        font-size:38px;
+    }
+
+    .hero-copy p{
+
+        font-size:16px;
+
+        line-height:1.8;
+    }
+
+    .hero-image img{
+
+        max-width:330px;
+    }
+}
+/*==================================================
+                WHY WE EXIST
+==================================================*/
+
+.why-exist{
+
+    width:100%;
+
+    max-width:1400px;
+
+    margin:0 auto;
+
+    padding:70px 5%;
+}
+
+/*==================================================
+                SECTION TITLE
+==================================================*/
+
+.section-title{
+
+    text-align:center;
+
+    margin-bottom:60px;
+}
+
+.section-title p{
+
+    text-transform:uppercase;
+
+    margin-top:12px;
+
+    font-size:clamp(34px,4vw,46px);
+
+    color:#0F172A;
+}
+
+/*==================================================
+                MAIN LAYOUT
+==================================================*/
+
+.why-container{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:50px;
+}
+
+/*==================================================
+                LEFT CONTENT
+==================================================*/
+
+.why-content{
+
+    flex:1;
+}
+
+.why-content p{
+
+    font-size:18px;
+
+    color:#64748B;
+
+    line-height:1.9;
+
+    margin-bottom:24px;
+
+    text-align:justify;
+}
+
+.why-content p:last-child{
+
+    margin-bottom:0;
+}
+
+/*==================================================
+                RIGHT GRID
+==================================================*/
+
+.why-cards{
+
+    flex:1;
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:22px;
+}
+
+/*==================================================
+                    CARD
+==================================================*/
+
+.card{
+
+    background:#F8FAFC;
+
+    border:1px solid #E2E8F0;
+
+    border-radius:18px;
+
+    padding:30px;
+
+    transition:.35s;
+}
+
+.card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:
+    0 18px 35px rgba(37,99,235,.14);
+}
+
+.card i{
+
+    font-size:34px;
+
+    color:#2563EB;
+
+    margin-bottom:18px;
+}
+
+.card h3{
+
+    color:#0F172A;
+
+    font-size:22px;
+
+    margin-bottom:12px;
+}
+
+.card p{
+
+    color:#64748B;
+
+    line-height:1.8;
+
+    font-size:16px;
+}
+
+/*==================================================
+                LARGE SCREEN
+==================================================*/
+
+@media(min-width:1400px){
+
+    .why-content p{
+
+        font-size:19px;
+    }
+
+    .card{
+
+        padding:35px;
+    }
+}
+
+/*==================================================
+                TABLET
+==================================================*/
+
+@media(max-width:1024px){
+
+    .why-container{
+
+        flex-direction:column;
+
+        gap:40px;
+    }
+
+    .why-content{
+
+        width:100%;
+
+        text-align:center;
+    }
+
+    .why-content p{
+
+        text-align:center;
+    }
+
+    .why-cards{
+
+        width:100%;
+    }
+}
+
+/*==================================================
+                MOBILE
+==================================================*/
+
+@media(max-width:768px){
+
+    .why-exist{
+
+        padding:50px 20px;
+    }
+
+    .section-title{
+
+        margin-bottom:40px;
+    }
+
+    .why-cards{
+
+        grid-template-columns:1fr;
+
+        gap:18px;
+    }
+
+    .card{
+
+        padding:25px;
+
+        text-align:center;
+    }
+
+    .card h3{
+
+        font-size:21px;
+    }
+
+    .card p{
+
+        font-size:15px;
+    }
+}
+
+/*==================================================
+                SMALL MOBILE
+==================================================*/
+
+@media(max-width:480px){
+
+    .why-exist{
+
+        padding:40px 16px;
+    }
+
+    .section-title h2{
+
+        font-size:30px;
+    }
+
+    .why-content p{
+
+        font-size:16px;
+
+        line-height:1.8;
+    }
+
+    .card{
+
+        padding:22px;
+    }
+
+    .card i{
+
+        font-size:30px;
+    }
+
+    .card h3{
+
+        font-size:20px;
+    }
+
+    .card p{
+
+        font-size:15px;
+    }
+}
+/*==================================================
+        MISSION • VISION • VALUES
+==================================================*/
+
+.purpose-section{
+
+    width:100%;
+
+    max-width:1400px;
+
+    margin:80px auto;
+
+    padding:0 5%;
+}
+
+/*==================================================
+                HEADER
+==================================================*/
+
+.purpose-header{
+
+    text-align:center;
+
+    margin-bottom:60px;
+}
+
+.purpose-header span{
+
+    color:#2563EB;
+
+    font-size:14px;
+
+    font-weight:700;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+}
+
+.purpose-header h2{
+
+    margin:15px 0;
+
+    font-size:clamp(34px,4vw,48px);
+
+    color:#0F172A;
+}
+
+.purpose-header p{
+
+    max-width:720px;
+
+    margin:auto;
+
+    color:#64748B;
+
+    line-height:1.9;
+
+    font-size:17px;
+}
+
+/*==================================================
+            PURPOSE CONTAINER
+==================================================*/
+
+.purpose-content{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:stretch;
+
+    gap:30px;
+}
+
+/*==================================================
+                PURPOSE ITEM
+==================================================*/
+
+.purpose-item{
+
+    flex:1;
+
+    background:#ffffff;
+
+    border:1px solid #E2E8F0;
+
+    border-radius:18px;
+
+    padding:35px 28px;
+
+    text-align:center;
+
+    transition:0.35s ease;
+}
+
+.purpose-item:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:
+    0 18px 35px rgba(37,99,235,.14);
+}
+
+.purpose-item h3{
+
+    color:#2563EB;
+
+    font-size:30px;
+
+    margin-bottom:20px;
+}
+
+.purpose-item p{
+
+    color:#64748B;
+
+    font-size:16px;
+
+    line-height:1.9;
+}
+
+/*==================================================
+            OPTIONAL ICON SUPPORT
+==================================================*/
+
+.purpose-item i{
+
+    font-size:42px;
+
+    color:#2563EB;
+
+    margin-bottom:20px;
+}
+
+/*==================================================
+                DESKTOP
+==================================================*/
+
+@media(min-width:1400px){
+
+    .purpose-item{
+
+        padding:40px 35px;
+    }
+
+    .purpose-item p{
+
+        font-size:17px;
+    }
+
+}
+
+/*==================================================
+                TABLET
+==================================================*/
+
+@media(max-width:1024px){
+
+    .purpose-section{
+
+        padding:0 4%;
+    }
+
+    .purpose-content{
+
+        gap:20px;
+    }
+
+    .purpose-item{
+
+        padding:30px 22px;
+    }
+
+}
+
+/*==================================================
+                MOBILE
+==================================================*/
+
+@media(max-width:768px){
+
+    .purpose-section{
+
+        margin:60px auto;
+
+        padding:0 20px;
+    }
+
+    .purpose-header{
+
+        margin-bottom:40px;
+    }
+
+    .purpose-content{
+
+        flex-direction:column;
+
+        gap:20px;
+    }
+
+    .purpose-item{
+
+        width:100%;
+
+        padding:28px 22px;
+    }
+
+    .purpose-item h3{
+
+        font-size:26px;
+    }
+
+    .purpose-item p{
+
+        font-size:15px;
+    }
+
+}
+
+/*==================================================
+            SMALL MOBILE
+==================================================*/
+
+@media(max-width:480px){
+
+    .purpose-header h2{
+
+        font-size:30px;
+    }
+
+    .purpose-header p{
+
+        font-size:15px;
+    }
+
+    .purpose-item{
+
+        padding:24px 18px;
+    }
+
+    .purpose-item h3{
+
+        font-size:24px;
+    }
+
+    .purpose-item i{
+
+        font-size:34px;
+    }
+
+}
+
+/*==================================================
+            SPACING HELPERS
+==================================================*/
+
+.purpose-item p:last-child{
+
+    margin-bottom:0;
+}
+
+.purpose-item *{
+
+    word-wrap:break-word;
+}
+
+.purpose-section::after{
+
+    content:"";
+
+    display:block;
+
+    clear:both;
+}
+/*==================================================
+                JOIN ADIC SECTION
+==================================================*/
+
+.join-adic{
+
+    width:100%;
+
+    max-width:1400px;
+
+    margin:80px auto;
+
+    padding:0 5%;
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:70px;
+
+    align-items:center;
+}
+
+/*==================================================
+                LEFT SIDE
+==================================================*/
+
+.join-left{
+
+    width:100%;
+}
+
+.join-tag{
+
+    color:#2563EB;
+
+    font-size:14px;
+
+    font-weight:700;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+}
+
+.join-left h2{
+
+    font-size:clamp(34px,4vw,48px);
+
+    color:#0F172A;
+
+    margin:18px 0 22px;
+}
+
+.join-left p{
+
+    color:#64748B;
+
+    font-size:17px;
+
+    line-height:1.9;
+
+    margin-bottom:35px;
+}
+
+/*==================================================
+                BENEFITS
+==================================================*/
+
+.join-benefits{
+
+    display:grid;
+
+    gap:20px;
+}
+
+.benefit{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:16px;
+
+    font-size:18px;
+
+    font-weight:600;
+
+    color:#0F172A;
+}
+
+.benefit i{
+
+    width:42px;
+
+    height:42px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    border-radius:50%;
+
+    background:#EFF6FF;
+
+    color:#2563EB;
+
+    font-size:18px;
+}
+
+/*==================================================
+                RIGHT FORM
+==================================================*/
+
+.join-right{
+
+    background:#ffffff;
+
+    border:1px solid #E2E8F0;
+
+    border-radius:20px;
+
+    padding:35px;
+
+    box-shadow:0 12px 35px rgba(0,0,0,.08);
+}
+
+.join-form{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:20px;
+}
+
+/*==================================================
+                INPUT GROUP
+==================================================*/
+
+.input-group{
+
+    display:flex;
+
+    flex-direction:column;
+}
+
+.input-group label{
+
+    font-size:15px;
+
+    font-weight:600;
+
+    color:#0F172A;
+
+    margin-bottom:8px;
+}
+
+.input-group input,
+
+.input-group textarea,
+
+.input-group select{
+
+    width:100%;
+
+    padding:14px 16px;
+
+    border:1px solid #CBD5E1;
+
+    border-radius:10px;
+
+    background:#fff;
+
+    outline:none;
+
+    transition:.3s;
+}
+
+.input-group textarea{
+
+    resize:vertical;
+
+    min-height:120px;
+}
+
+.input-group input:focus,
+
+.input-group textarea:focus,
+
+.input-group select:focus{
+
+    border-color:#2563EB;
+
+    box-shadow:0 0 0 3px rgba(37,99,235,.12);
+}
+
+/*==================================================
+                SUBMIT BUTTON
+==================================================*/
+
+.join-btn{
+
+    width:100%;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#2563EB;
+
+    color:#ffffff;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.join-btn:hover{
+
+    background:#1D4ED8;
+
+    transform:translateY(-2px);
+}
+
+/*==================================================
+                TABLET
+==================================================*/
+
+@media(max-width:992px){
+
+    .join-adic{
+
+        grid-template-columns:1fr;
+
+        gap:45px;
+    }
+
+    .join-left{
+
+        text-align:center;
+    }
+
+    .benefit{
+
+        justify-content:center;
+    }
+
+}
+
+/*==================================================
+                MOBILE
+==================================================*/
+
+@media(max-width:768px){
+
+    .join-adic{
+
+        margin:60px auto;
+
+        padding:0 20px;
+    }
+
+    .join-left h2{
+
+        font-size:32px;
+    }
+
+    .join-left p{
+
+        font-size:16px;
+    }
+
+    .join-right{
+
+        padding:25px;
+    }
+
+    .join-form{
+
+        gap:16px;
+    }
+
+    .input-group input,
+
+    .input-group textarea,
+
+    .input-group select{
+
+        padding:13px;
+    }
+
+}
+
+/*==================================================
+                SMALL MOBILE
+==================================================*/
+
+@media(max-width:480px){
+
+    .join-adic{
+
+        padding:0 15px;
+    }
+
+    .join-left h2{
+
+        font-size:28px;
+    }
+
+    .benefit{
+
+        font-size:16px;
+
+        gap:12px;
+    }
+
+    .benefit i{
+
+        width:36px;
+
+        height:36px;
+
+        font-size:16px;
+    }
+
+    .join-right{
+
+        padding:20px;
+    }
+
+    .join-btn{
+
+        font-size:15px;
+
+        padding:14px;
+    }
+
+}
+/*==================================================
+                CONTACT SECTION
+==================================================*/
+
+.contact-section{
+
+    width:100%;
+
+    max-width:1400px;
+
+    margin:80px auto;
+
+    padding:0 5%;
+}
+
+/*==================================================
+                CONTACT HEADER
+==================================================*/
+
+.contact-header{
+
+    text-align:center;
+
+    margin-bottom:60px;
+}
+
+.contact-header span{
+
+    color:#2563EB;
+
+    font-size:14px;
+
+    font-weight:700;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+}
+
+.contact-header h2{
+
+    font-size:clamp(34px,4vw,46px);
+
+    color:#0F172A;
+
+    margin:15px 0;
+}
+
+.contact-header p{
+
+    max-width:700px;
+
+    margin:auto;
+
+    color:#64748B;
+
+    line-height:1.8;
+
+    font-size:17px;
+}
+
+/*==================================================
+                CONTACT GRID
+==================================================*/
+
+.contact-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:30px;
+}
+
+.contact-box{
+
+    background:#ffffff;
+
+    border:1px solid #E2E8F0;
+
+    border-radius:18px;
+
+    padding:35px 25px;
+
+    text-align:center;
+
+    transition:.3s;
+}
+
+.contact-box:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 15px 35px rgba(37,99,235,.15);
+}
+
+.contact-box i{
+
+    font-size:36px;
+
+    color:#2563EB;
+
+    margin-bottom:18px;
+}
+
+.contact-box h3{
+
+    font-size:22px;
+
+    color:#0F172A;
+
+    margin-bottom:12px;
+}
+
+.contact-box a{
+
+    color:#64748B;
+
+    text-decoration:none;
+
+    word-break:break-word;
+
+    transition:.3s;
+}
+
+.contact-box a:hover{
+
+    color:#2563EB;
+}
+
+/*==================================================
+            SCROLL TO TOP BUTTON
+==================================================*/
+
+#scrollTopBtn{
+
+    position:fixed;
+
+    right:25px;
+
+    bottom:25px;
+
+    width:52px;
+
+    height:52px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:#2563EB;
+
+    color:#ffffff;
+
+    font-size:22px;
+
+    cursor:pointer;
+
+    box-shadow:0 10px 25px rgba(37,99,235,.35);
+
+    opacity:0;
+
+    pointer-events:none;
+
+    transition:.3s;
+
+    z-index:999;
+}
+
+#scrollTopBtn.show{
+
+    opacity:1;
+
+    pointer-events:auto;
+}
+
+#scrollTopBtn:hover{
+
+    background:#1D4ED8;
+
+    transform:translateY(-4px);
+}
+
+/*==================================================
+                TABLET
+==================================================*/
+
+@media(max-width:992px){
+
+    .contact-grid{
+
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+/*==================================================
+                MOBILE
+==================================================*/
+
+@media(max-width:768px){
+
+    .contact-section{
+
+        margin:60px auto;
+
+        padding:0 20px;
+    }
+
+    .contact-header{
+
+        margin-bottom:40px;
+    }
+
+    .contact-grid{
+
+        grid-template-columns:repeat(3,1fr);
+
+        gap:12px;
+    }
+
+    .contact-box{
+
+        padding:15px 8px;
+    }
+
+    .contact-box i{
+
+        font-size:24px;
+
+        margin-bottom:8px;
+    }
+
+    .contact-box h3{
+
+        font-size:14px;
+
+        margin-bottom:6px;
+    }
+
+    .contact-box a{
+
+        font-size:11px;
+
+        line-height:1.4;
+
+        word-break:break-word;
+    }
+
+}
+
+/*==================================================
+            SMALL MOBILE
+==================================================*/
+
+@media(max-width:480px){
+
+    .contact-grid{
+
+        grid-template-columns:repeat(3,1fr);
+
+        gap:8px;
+    }
+
+    .contact-box{
+
+        padding:12px 5px;
+    }
+
+    .contact-box i{
+
+        font-size:20px;
+    }
+
+    .contact-box h3{
+
+        font-size:12px;
+    }
+
+    .contact-box a{
+
+        font-size:10px;
+    }
+
+}
+
+/*==================================================
+                UTILITIES
+==================================================*/
+
+section{
+
+    scroll-margin-top:100px;
+}
+
+html{
+
+    scroll-behavior:smooth;
+}
+
+body{
+
+    overflow-x:hidden;
+}
+
+img{
+
+    max-width:100%;
+
+    height:auto;
+
+    display:block;
+}
+
+button{
+
+    font-family:inherit;
+}
+
+input,
+textarea,
+select{
+
+    font-family:inherit;
+}
+</style>
+</head>
+<header class="navbar">
+    <div class="logo">
+        
+        <img src="amcetlogo.jpeg" alt="College Logo" class="college-logo">
+        
+        <img class="college-info" src="clgname.jpeg">
+            
+        <div class="vrline" style="border-left: 1.5px solid #ccc; height: 47px; margin: 0 15px;"></div>
+        
+        <img src="logo.jpeg" alt="ADIC Logo">
+
+        <div>
+            <p style="font-size:13px; font-weight: bold; display:flex;">AMCET <br> Digital Innovation Cell</p>
+        </div>
+    </div>
+
+    <ul class="nav-links">
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#vision">Why We Exist</a></li>
+        <li><a href="domain.html">Technology Domain</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="#join">Join ADIC</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+
+</header>
+<hr style="border: 1px solid #eaeaea; margin: 0; ">
+
+<section class="hero" id="home">
+
+    <div class="hero-copy">
+
+        <div class="eyebrow">
+            A STUDENT-LED INITIATIVE
+        </div>
+
+        <h1>
+            Building the Future<br>
+            of <span class="blue">Our Campus</span>
+        </h1>
+
+        <p>
+            We are a passionate team of students who design,
+            develop and deliver digital solutions to improve
+            campus life and create meaningful impact.
+        </p>
+
+    </div>
+
+    
+
+        <div class="hero-image">
+
+            <img
+                src="building.jpeg"
+                alt="AMCET Building">
+
+        </div>
+
+</section>
+
+<section class="why-exist" id="vision">
+
+    <div class="section-title">
+        <p>WHY WE EXIST</p>
+    </div>
+
+    <div class="why-container">
+
+        <div class="why-content">
+
+            <p>
+                ADIC was created to transform ideas into impactful solutions.
+                We provide students with opportunities to innovate, build real-world
+                projects, and contribute to the digital growth of our campus.
+            </p>
+
+            <p>
+                By bringing together students, faculty, and technology enthusiasts,
+                we foster a culture of collaboration, creativity, and continuous
+                learning that prepares future leaders and innovators.
+            </p>
+
+            <p>
+                It turns real-world client ideas into market-ready products, 
+                giving students hands-on software development experience while 
+                delivering measurable value to businesses.
+            </p>
+
+        </div>
+
+        <div class="why-cards">
+
+            <div class="card">
+                <i class="fa-solid fa-user-graduate"></i>
+                <h3>Student Driven</h3>
+                <p>Empowering students to innovate through hands-on learning.</p>
+            </div>
+
+            <div class="card">
+                <i class="fa-solid fa-lightbulb"></i>
+                <h3>Innovation</h3>
+                <p>Building creative and practical digital solutions.</p>
+            </div>
+
+            <div class="card">
+                <i class="fa-solid fa-users"></i>
+                <h3>Collaboration</h3>
+                <p>Working together with faculty, students, and departments.</p>
+            </div>
+
+            <div class="card">
+                <i class="fa-solid fa-rocket"></i>
+                <h3>Future Ready</h3>
+                <p>Preparing students with real-world development experience.</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="purpose-section" id="purpose">
+
+    <div class="purpose-header">
+        <span>OUR FOUNDATION</span>
+        <h2>Driven by Purpose, Guided by Vision</h2>
+        <p>
+            ADIC exists to foster innovation, empower students,
+            and create meaningful technological impact within
+            our campus community.
+        </p>
+    </div>
+
+    <div class="purpose-content">
+
+        <div class="purpose-item">
+            <h3>Mission</h3>
+            <p>
+                To cultivate a collaborative environment where
+                students can explore emerging technologies,
+                develop practical skills, and build innovative
+                solutions that address real-world challenges.
+            </p>
+        </div>
+
+        <div class="purpose-item">
+            <h3>Vision</h3>
+            <p>
+                To become a leading student-driven innovation
+                community recognized for creativity, technical
+                excellence, and meaningful contributions to
+                digital transformation.
+            </p>
+        </div>
+
+        <div class="purpose-item">
+            <h3>Values</h3>
+            <p>
+                Innovation, collaboration, continuous learning,
+                leadership, inclusivity, and a commitment to
+                creating positive impact through technology.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+<section class="join-adic" id="join">
+
+    <div class="join-left">
+
+        <span class="join-tag">JOIN ADIC</span>
+
+        <h2>Become Part of the Innovation Team</h2>
+
+        <p>
+            Join a community of passionate students who collaborate,
+            innovate, and build impactful solutions for our campus.
+            Gain hands-on experience, work on real-world projects,
+            and grow alongside talented peers and mentors.
+        </p>
+
+        <div class="join-benefits">
+
+            <div class="benefit">
+                <i class="fa-solid fa-code"></i>
+                <span>Real-World Projects</span>
+            </div>
+
+            <div class="benefit">
+                <i class="fa-solid fa-users"></i>
+                <span>Team Collaboration</span>
+            </div>
+
+            <div class="benefit">
+                <i class="fa-solid fa-graduation-cap"></i>
+                <span>Mentorship & Learning</span>
+            </div>
+
+            <div class="benefit">
+                <i class="fa-solid fa-rocket"></i>
+                <span>Innovation & Growth</span>
+            </div>
+
+        </div>
+
+    </div>
+
+<div class="join-right">
+
+        <form class="join-form">
+
+            <div class="input-group">
+                <label>Full Name</label>
+                <input type="text" placeholder="Enter your name">
+            </div>
+
+            <div class="input-group">
+                <label>Department</label>
+                <input type="text" placeholder="Department">
+            </div>
+
+            <div class="input-group">
+                <label>Projects Worked On</label>
+                <textarea rows="4" placeholder="Describe your projects"></textarea>
+            </div>
+
+            <div class="input-group">
+                <label>Phone Number</label>
+                <input type="tel" placeholder="+91 XXXXX XXXXX">
+            </div>
+
+            <div class="input-group">
+                <label>Email Address</label>
+                <input type="email" placeholder="example@gmail.com">
+            </div>
+
+            <div class="input-group">
+                <label>Area of Interest</label>
+                <select>
+                    <option>Select Domain</option>
+                    <option>Web Development</option>
+                    <option>UI/UX Design</option>
+                    <option>Cloud & DevOps</option>
+                    <option>Data Analytics</option>
+                    <option>AI & Machine Learning</option>
+                </select>
+            </div>
+
+            <button type="submit" class="join-btn">
+                Submit Application
+            </button>
+
+        </form>
+
+    </div>
+    </section>
+    <section class="contact-section" id="contact">
+
+    <div class="contact-header">
+        <span>CONTACT US</span>
+        <h2>Connect With ADIC</h2>
+        <p>
+            Have questions, ideas, or collaboration opportunities?
+            Reach out to us and become part of the innovation journey.
+        </p>
+    </div>
+
+    <div class="contact-grid">
+
+        <div class="contact-box">
+            <i class="fas fa-envelope"></i>
+            <h3>Email</h3>
+            <p>
+                <a href="mailto:adic@college.edu">
+                    adic@college.edu
+                </a>
+            </p>
+        </div>
+
+        <div class="contact-box">
+            <i class="fas fa-phone"></i>
+            <h3>Phone</h3>
+            <p>
+                <a href="tel:+919999999999">
+                    +91 99999 99999
+                </a>
+            </p>
+        </div>
+
+        
+
+        <div class="contact-box">
+            <i class="fab fa-linkedin"></i>
+            <h3>LinkedIn</h3>
+            <p>
+                <a href="https://linkedin.com" target="_blank">
+                    ADIC Official
+                </a>
+            </p>
+        </div>
+
+    </div>
+
+</section>
+    
+
+<!-- Scroll to top button -->
+<button id="scrollTopBtn" aria-label="Scroll to top" title="Go to top">⇡
+</button>
+
+<script>
+  const scrollTopBtn = document.getElementById("scrollTopBtn");
+
+  // Show/hide button based on scroll position
+  window.addEventListener("scroll", () => {
+    const scrolled = window.scrollY || document.documentElement.scrollTop;
+
+    if (scrolled > 300) {
+      scrollTopBtn.classList.add("show");
+    } else {
+      scrollTopBtn.classList.remove("show");
+    }
+  });
+
+  // Smooth scroll to top on click
+  scrollTopBtn.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+
+  <!--banner-->
+  document.addEventListener('DOMContentLoaded', () => {
+  const banner = document.getElementById('techBanner');
+  const spotlight = document.getElementById('spotlight');
+
+  if (banner && spotlight) {
+    banner.addEventListener('mousemove', (e) => {
+      const rect = banner.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+
+      spotlight.style.left = `${x}px`;
+      spotlight.style.top = `${y}px`;
+    });
+  }
+});
+</script>
+
+</body>
+</html>
