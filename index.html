@@ -1586,58 +1586,6 @@ ul{
     color:#2563EB;
 }
 
-/*==================================================
-            SCROLL TO TOP BUTTON
-==================================================*/
-
-#scrollTopBtn{
-
-    position:fixed;
-
-    right:25px;
-
-    bottom:25px;
-
-    width:52px;
-
-    height:52px;
-
-    border:none;
-
-    border-radius:50%;
-
-    background:#2563EB;
-
-    color:#ffffff;
-
-    font-size:22px;
-
-    cursor:pointer;
-
-    box-shadow:0 10px 25px rgba(37,99,235,.35);
-
-    opacity:0;
-
-    pointer-events:none;
-
-    transition:.3s;
-
-    z-index:999;
-}
-
-#scrollTopBtn.show{
-
-    opacity:1;
-
-    pointer-events:auto;
-}
-
-#scrollTopBtn:hover{
-
-    background:#1D4ED8;
-
-    transform:translateY(-4px);
-}
 
 /*==================================================
                 TABLET
@@ -2091,51 +2039,5 @@ select{
     </div>
 
 </section>
-    
-
-<!-- Scroll to top button -->
-<button id="scrollTopBtn" aria-label="Scroll to top" title="Go to top">⇡
-</button>
-
-<script>
-  const scrollTopBtn = document.getElementById("scrollTopBtn");
-
-  // Show/hide button based on scroll position
-  window.addEventListener("scroll", () => {
-    const scrolled = window.scrollY || document.documentElement.scrollTop;
-
-    if (scrolled > 300) {
-      scrollTopBtn.classList.add("show");
-    } else {
-      scrollTopBtn.classList.remove("show");
-    }
-  });
-
-  // Smooth scroll to top on click
-  scrollTopBtn.addEventListener("click", () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
-    });
-  });
-
-  <!--banner-->
-  document.addEventListener('DOMContentLoaded', () => {
-  const banner = document.getElementById('techBanner');
-  const spotlight = document.getElementById('spotlight');
-
-  if (banner && spotlight) {
-    banner.addEventListener('mousemove', (e) => {
-      const rect = banner.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-
-      spotlight.style.left = `${x}px`;
-      spotlight.style.top = `${y}px`;
-    });
-  }
-});
-</script>
-
 </body>
 </html>
