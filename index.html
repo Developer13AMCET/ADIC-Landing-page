@@ -6,15 +6,14 @@
 <title>ADIC</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 <style>
-    /*==================================================
+  /*====================================================
                 GLOBAL RESET
-==================================================*/ 
+====================================================*/
 
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
 }
 
 html{
@@ -22,24 +21,16 @@ html{
 }
 
 body{
-    background:#ffffff;
-    color:#222;
-    line-height:1.6;
+    font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
+    color:#1f2937;
+    background:#fff;
     overflow-x:hidden;
-    min-height:100vh;
+    line-height:1.6;
 }
 
 img{
-    display:block;
     max-width:100%;
-    height:auto;
-}
-
-input,
-textarea,
-select,
-button{
-    font:inherit;
+    display:block;
 }
 
 a{
@@ -50,109 +41,99 @@ ul{
     list-style:none;
 }
 
-/*==================================================
+section{
+    width:100%;
+    padding:80px 6%;
+}
+
+/*====================================================
                     NAVBAR
-==================================================*/
+====================================================*/
 
 .navbar{
 
+    position:sticky;
+    top:0;
+    z-index:999;
+
     width:100%;
-    min-height:90px;
+    height:85px;
+
+    background:#fff;
 
     display:flex;
     justify-content:space-between;
     align-items:center;
 
-    padding:18px 5%;
+    padding:0 6%;
 
-    background:#ffffff;
-
-    border-bottom:1px solid #eaeaea;
-
-    position:sticky;
-    top:0;
-    left:0;
-
-    z-index:1000;
+    border-bottom:1px solid #e8e8e8;
 }
 
-/*==================================================
-                    LOGO AREA
-==================================================*/
+/*====================================================
+                    LOGO
+====================================================*/
 
 .logo{
 
     display:flex;
     align-items:center;
-    gap:16px;
+    gap:18px;
 
     flex-shrink:0;
 }
 
-.logo img{
+.college-logo{
 
-    width:60px;
-    height:auto;
+    height:45px;
+    width:auto;
+}
+
+.college-info{
+
+    height:30px;
+    width:auto;
+}
+
+.logo > img:last-of-type{
+
+    height:52px;
+    width:auto;
 }
 
 .logo p{
 
     font-size:13px;
-    font-weight:bold;
-    color:#333;
-    line-height:1.4;
-}
-
-.college-logo{
-
-    width:auto;
-    height:42px;
-}
-
-.college-info{
-
-    transform:scale(2.2);
-
-    margin-left:26px;
-    margin-right:24px;
-    margin-top:5px;
+    font-weight:700;
+    line-height:1.3;
+    color:#111827;
 }
 
 .vrline{
 
-    border-left:1.5px solid #d6d6d6;
-
-    height:47px;
+    width:1px;
+    height:45px;
+    background:#d8d8d8;
 }
 
-/*==================================================
-                NAVIGATION LINKS
-==================================================*/
+/*====================================================
+                NAV LINKS
+====================================================*/
 
 .nav-links{
 
     display:flex;
     align-items:center;
-
-    gap:40px;
-
-    flex-wrap:wrap;
-}
-
-.nav-links li{
-
-    list-style:none;
+    gap:28px;
 }
 
 .nav-links a{
 
-    color:#111827;
-
-    font-size:16px;
-
+    color:#1f2937;
+    font-size:15px;
     font-weight:600;
 
-    transition:0.3s;
+    transition:.3s;
 }
 
 .nav-links a:hover{
@@ -160,178 +141,77 @@ ul{
     color:#2563EB;
 }
 
-.nav-links a.active{
+.nav-links .active{
 
     color:#2563EB;
-
     position:relative;
 }
 
-.nav-links a.active::after{
+.nav-links .active::after{
 
     content:"";
 
     position:absolute;
 
     left:0;
-    bottom:-10px;
+    bottom:-8px;
 
     width:100%;
     height:3px;
 
-    border-radius:10px;
+    border-radius:20px;
 
     background:#2563EB;
 }
 
-/*==================================================
-                TABLET RESPONSIVE
-==================================================*/
-
-@media(max-width:1024px){
-
-    .navbar{
-
-        padding:18px 30px;
-    }
-
-    .nav-links{
-
-        gap:22px;
-    }
-
-    .logo img{
-
-        width:55px;
-    }
-
-    .college-info{
-
-        transform:scale(1.8);
-
-        margin-left:18px;
-        margin-right:18px;
-    }
-}
-
-/*==================================================
-                MOBILE RESPONSIVE
-==================================================*/
-
-@media(max-width:768px){
-
-    .navbar{
-
-        flex-direction:column;
-
-        justify-content:center;
-
-        gap:18px;
-
-        padding:20px;
-    }
-
-    .logo{
-
-        flex-wrap:wrap;
-
-        justify-content:center;
-
-        gap:12px;
-    }
-
-    .college-info{
-
-        transform:none;
-
-        margin:0;
-    }
-
-    .vrline{
-
-        display:none;
-    }
-
-    .nav-links{
-
-        width:100%;
-
-        justify-content:center;
-
-        gap:14px;
-    }
-
-    .nav-links a{
-
-        font-size:15px;
-    }
-
-    .logo img{
-
-        width:48px;
-    }
-
-    .logo p{
-
-        text-align:center;
-    }
-}
-/*==================================================
-                    HERO SECTION
-==================================================*/
+/*====================================================
+                    HERO
+====================================================*/
 
 .hero{
 
-    width:100%;
-
-    min-height:78vh;
-
     display:flex;
-
+    justify-content:space-between;
     align-items:center;
 
-    justify-content:space-between;
+    gap:60px;
 
-    gap:50px;
+    min-height:auto;
 
-    padding:40px 5%;
+    padding:30px 6%;
 }
 
-/*==================================================
-                HERO LEFT CONTENT
-==================================================*/
+/*====================================================
+                LEFT CONTENT
+====================================================*/
 
 .hero-copy{
 
     flex:1;
-
-    min-width:320px;
 }
 
 .eyebrow{
 
     color:#2563EB;
 
-    font-size:15px;
+    text-transform:uppercase;
 
-    font-weight:700;
+    font-size:14px;
 
     letter-spacing:2px;
 
-    text-transform:uppercase;
+    font-weight:700;
 
-    margin-bottom:22px;
+    margin-bottom:20px;
 }
 
-.hero-copy h1{
+.hero h1{
 
-    font-size:clamp(42px,6vw,78px);
+    font-size:64px;
 
-    font-weight:800;
+    line-height:1.1;
 
-    line-height:1.05;
-
-    color:#0F172A;
+    color:#111827;
 
     margin-bottom:25px;
 }
@@ -341,20 +221,23 @@ ul{
     color:#2563EB;
 }
 
-.hero-copy p{
+.hero p{
 
     max-width:620px;
 
-    font-size:20px;
+    color:#6b7280;
 
-    color:#64748B;
+    font-size:19px;
 
     line-height:1.9;
 }
 
-/*==================================================
+/*====================================================
                 HERO IMAGE
-==================================================*/
+====================================================*/
+/*====================================================
+                HERO IMAGE
+====================================================*/
 
 .hero-image{
 
@@ -366,7 +249,7 @@ ul{
 
     align-items:center;
 
-    position:relative;
+    min-width:0;
 
     overflow:hidden;
 }
@@ -377,91 +260,60 @@ ul{
 
     max-width:680px;
 
+    height:auto;
+
     object-fit:contain;
 
     filter:drop-shadow(0 15px 35px rgba(0,0,0,.15));
 
     transition:
-    transform .4s ease,
-    filter .4s ease;
+        transform .4s ease,
+        filter .4s ease;
 
     -webkit-mask-image:
-    radial-gradient(
-        ellipse at center,
-        rgba(0,0,0,1) 68%,
-        rgba(0,0,0,.90) 80%,
-        rgba(0,0,0,.45) 92%,
-        transparent 100%
-    );
+        radial-gradient(
+            ellipse at center,
+            rgba(0,0,0,1) 68%,
+            rgba(0,0,0,.90) 80%,
+            rgba(0,0,0,.45) 92%,
+            transparent 100%
+        );
 
     mask-image:
-    radial-gradient(
-        ellipse at center,
-        rgba(0,0,0,1) 68%,
-        rgba(0,0,0,.90) 80%,
-        rgba(0,0,0,.45) 92%,
-        transparent 100%
-    );
+        radial-gradient(
+            ellipse at center,
+            rgba(0,0,0,1) 68%,
+            rgba(0,0,0,.90) 80%,
+            rgba(0,0,0,.45) 92%,
+            transparent 100%
+        );
 }
 
 .hero-image img:hover{
 
     transform:scale(1.02);
 
-    filter:drop-shadow(0 20px 45px rgba(0,0,0,.18));
+    filter:drop-shadow(0 22px 45px rgba(0,0,0,.18));
 }
 
-/*==================================================
-                LARGE DESKTOP
-==================================================*/
+/*======================
+      LAPTOP
+======================*/
 
-@media(min-width:1400px){
-
-    .hero{
-
-        max-width:1500px;
-
-        margin:auto;
-    }
-
-    .hero-copy h1{
-
-        font-size:82px;
-    }
-
-    .hero-copy p{
-
-        font-size:22px;
-    }
+@media(max-width:1200px){
 
     .hero-image img{
 
-        max-width:760px;
+        max-width:560px;
     }
+
 }
 
-/*==================================================
-                TABLET
-==================================================*/
+/*======================
+      TABLET
+======================*/
 
-@media(max-width:1024px){
-
-    .hero{
-
-        gap:35px;
-
-        padding:40px;
-    }
-
-    .hero-copy h1{
-
-        font-size:56px;
-    }
-
-    .hero-copy p{
-
-        font-size:18px;
-    }
+@media(max-width:992px){
 
     .hero-image{
 
@@ -470,208 +322,299 @@ ul{
 
     .hero-image img{
 
-        max-width:520px;
+        max-width:500px;
     }
+
 }
 
-/*==================================================
-                MOBILE
-==================================================*/
+/*======================
+      MOBILE
+======================*/
 
 @media(max-width:768px){
 
-    .hero{
-
-        flex-direction:column;
-
-        text-align:center;
-
-        justify-content:center;
-
-        gap:30px;
-
-        padding:40px 20px;
-
-        min-height:auto;
-    }
-
-    .hero-copy{
-
-        width:100%;
-
-        min-width:100%;
-    }
-
-    .hero-copy p{
-
-        margin:auto;
-    }
-
     .hero-image{
 
         width:100%;
 
         justify-content:center;
     }
+
+    .hero-image img{
+
+        width:90%;
+
+        max-width:420px;
+    }
+
+}
+
+/*======================
+    SMALL MOBILE
+======================*/
+
+@media(max-width:480px){
 
     .hero-image img{
 
         width:95%;
 
-        max-width:420px;
+        max-width:320px;
     }
+
 }
 
-/*==================================================
-                SMALL MOBILE
-==================================================*/
+/*====================================================
+                TABLET
+====================================================*/
 
-@media(max-width:480px){
+@media(max-width:992px){
 
-    .hero{
+.navbar{
 
-        padding:30px 18px;
-    }
+    height:auto;
 
-    .eyebrow{
+    padding:20px 5%;
 
-        font-size:13px;
-    }
+    flex-direction:column;
 
-    .hero-copy h1{
-
-        font-size:38px;
-    }
-
-    .hero-copy p{
-
-        font-size:16px;
-
-        line-height:1.8;
-    }
-
-    .hero-image img{
-
-        max-width:330px;
-    }
-}
-/*==================================================
-                WHY WE EXIST
-==================================================*/
-
-.why-exist{
-
-    width:100%;
-
-    max-width:1400px;
-
-    margin:0 auto;
-
-    padding:0px 5%;
+    gap:18px;
 }
 
-/*==================================================
-                SECTION TITLE
-==================================================*/
+.logo{
 
-.section-title{
+    justify-content:center;
+}
+
+.nav-links{
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+    gap:18px;
+}
+
+.hero{
+
+    min-height:auto;
+
+    flex-direction:column;
 
     text-align:center;
 
-    margin-bottom:60px;
+    padding:70px 5%;
 }
 
+.hero-copy{
+
+    order:2;
+}
+
+.hero-image{
+
+    order:1;
+}
+
+.hero p{
+
+    margin:auto;
+}
+
+.hero h1{
+
+    font-size:48px;
+}
+
+.hero-image img{
+
+    max-width:500px;
+}
+
+}
+
+/*====================================================
+                MOBILE
+====================================================*/
+
+@media(max-width:768px){
+
+section{
+
+    padding:70px 20px;
+}
+
+.hero{
+
+    gap:35px;
+}
+
+.hero h1{
+
+    font-size:38px;
+}
+
+.hero p{
+
+    font-size:17px;
+}
+
+.logo{
+
+    gap:10px;
+}
+
+.college-logo{
+
+    height:38px;
+}
+
+.college-info{
+
+    height:22px;
+}
+
+.logo>img:last-of-type{
+
+    height:42px;
+}
+
+.logo p{
+
+    font-size:12px;
+}
+
+.nav-links{
+
+    gap:12px;
+}
+
+.nav-links a{
+
+    font-size:14px;
+}
+
+}
+
+/*====================================================
+            SMALL MOBILE
+====================================================*/
+
+@media(max-width:480px){
+
+.hero h1{
+
+    font-size:32px;
+}
+
+.hero p{
+
+    font-size:16px;
+}
+
+.nav-links{
+
+    gap:10px;
+}
+
+.nav-links a{
+
+    font-size:13px;
+}
+
+.logo{
+
+    flex-wrap:wrap;
+}
+
+.vrline{
+
+    display:none;
+}
+
+}
+/*====================================================
+                WHY WE EXIST
+====================================================*/
+
+.why-exist{
+    width:100%;
+    padding:2px 6%;
+    background:#ffffff;
+}
+   
 .section-title p{
-
+     text-align:center;
+    margin-bottom:60px;
+    font-size:42px;
+    font-weight:700;
+    color:#1e3a8a;
     text-transform:uppercase;
-
-    margin-top:12px;
-
-    font-size:clamp(34px,4vw,46px);
-
-    color:#1E3A8A;
+    letter-spacing:1px;
 }
-
-/*==================================================
-                MAIN LAYOUT
-==================================================*/
 
 .why-container{
+    max-width:1300px;
+    margin:0 auto;
 
     display:flex;
-
-    justify-content:space-between;
-
     align-items:center;
-
-    gap:50px;
+    justify-content:space-between;
+    gap:60px;
 }
 
-/*==================================================
+/*====================================================
                 LEFT CONTENT
-==================================================*/
+====================================================*/
 
 .why-content{
-
     flex:1;
 }
 
 .why-content p{
-
     font-size:18px;
-
-    color:#64748B;
-
     line-height:1.9;
-
+    color:#64748b;
     margin-bottom:24px;
-
     text-align:justify;
 }
 
 .why-content p:last-child{
-
     margin-bottom:0;
 }
 
-/*==================================================
-                RIGHT GRID
-==================================================*/
+/*====================================================
+                RIGHT CARDS
+====================================================*/
 
 .why-cards{
-
     flex:1;
 
     display:grid;
-
     grid-template-columns:repeat(2,1fr);
-
-    gap:22px;
+    gap:25px;
 }
-
-/*==================================================
-                    CARD
-==================================================*/
 
 .card{
 
-    background:#F8FAFC;
+    background:#fff;
 
-    border:1px solid #E2E8F0;
+    border:1px solid #e5e7eb;
 
     border-radius:18px;
 
     padding:30px;
 
     transition:.35s;
+
+    box-shadow:0 5px 18px rgba(0,0,0,.05);
 }
 
 .card:hover{
 
     transform:translateY(-8px);
 
-    box-shadow:
-    0 18px 35px rgba(37,99,235,.14);
+    box-shadow:0 20px 40px rgba(37,99,235,.15);
 }
 
 .card i{
@@ -685,48 +628,33 @@ ul{
 
 .card h3{
 
-    color:#0F172A;
-
     font-size:22px;
+
+    color:#111827;
 
     margin-bottom:12px;
 }
 
 .card p{
 
-    color:#64748B;
-
-    line-height:1.8;
-
     font-size:16px;
+
+    color:#6b7280;
+
+    line-height:1.7;
 }
 
-/*==================================================
-                LARGE SCREEN
-==================================================*/
-
-@media(min-width:1400px){
-
-    .why-content p{
-
-        font-size:19px;
-    }
-
-    .card{
-
-        padding:35px;
-    }
-}
-
-/*==================================================
+/*====================================================
                 TABLET
-==================================================*/
+====================================================*/
 
-@media(max-width:1024px){
+@media(max-width:992px){
 
     .why-container{
 
         flex-direction:column;
+
+        text-align:center;
 
         gap:40px;
     }
@@ -734,8 +662,6 @@ ul{
     .why-content{
 
         width:100%;
-
-        text-align:center;
     }
 
     .why-content p{
@@ -747,22 +673,35 @@ ul{
 
         width:100%;
     }
+
 }
 
-/*==================================================
+/*====================================================
                 MOBILE
-==================================================*/
+====================================================*/
 
 @media(max-width:768px){
 
     .why-exist{
 
-        padding:50px 20px;
+        padding:70px 20px;
     }
 
     .section-title{
 
         margin-bottom:40px;
+    }
+
+    .section-title p{
+
+        font-size:34px;
+    }
+
+    .why-content p{
+
+        font-size:16px;
+
+        line-height:1.8;
     }
 
     .why-cards{
@@ -781,36 +720,35 @@ ul{
 
     .card h3{
 
-        font-size:21px;
+        font-size:20px;
     }
 
     .card p{
 
         font-size:15px;
     }
+
 }
 
-/*==================================================
+/*====================================================
                 SMALL MOBILE
-==================================================*/
+====================================================*/
 
 @media(max-width:480px){
 
     .why-exist{
 
-        padding:40px 16px;
+        padding:60px 16px;
     }
 
-    .section-title h2{
+    .section-title p{
 
-        font-size:30px;
+        font-size:28px;
     }
 
     .why-content p{
 
-        font-size:16px;
-
-        line-height:1.8;
+        font-size:15px;
     }
 
     .card{
@@ -823,305 +761,243 @@ ul{
         font-size:30px;
     }
 
-    .card h3{
-
-        font-size:20px;
-    }
-
-    .card p{
-
-        font-size:15px;
-    }
 }
-/*==================================================
-        MISSION • VISION • VALUES
-==================================================*/
+/*====================================================
+            MISSION • VISION • VALUES
+====================================================*/
 
 .purpose-section{
-
     width:100%;
-
-    max-width:1400px;
-
-    margin:80px auto;
-
-    padding:0 5%;
+    padding:90px 6%;
+    background:#f8fafc;
 }
 
-/*==================================================
-                HEADER
-==================================================*/
-
 .purpose-header{
-
+    max-width:800px;
+    margin:0 auto 60px;
     text-align:center;
-
-    margin-bottom:60px;
 }
 
 .purpose-header span{
-
+    display:inline-block;
     color:#2563EB;
-
     font-size:14px;
-
     font-weight:700;
-
     letter-spacing:2px;
-
     text-transform:uppercase;
+    margin-bottom:15px;
 }
 
 .purpose-header h2{
-
-    margin:15px 0;
-
-    font-size:clamp(34px,4vw,48px);
-
+    font-size:44px;
     color:#0F172A;
+    margin-bottom:18px;
+    line-height:1.2;
 }
 
 .purpose-header p{
-
-    max-width:720px;
-
-    margin:auto;
-
+    font-size:18px;
     color:#64748B;
-
-    line-height:1.9;
-
-    font-size:17px;
+    line-height:1.8;
 }
 
-/*==================================================
-            PURPOSE CONTAINER
-==================================================*/
+/*====================================================
+                CARDS
+====================================================*/
 
 .purpose-content{
+    max-width:1300px;
+    margin:auto;
 
-    display:flex;
-
-    justify-content:center;
-
-    align-items:stretch;
-
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
     gap:30px;
 }
 
-/*==================================================
-                PURPOSE ITEM
-==================================================*/
-
 .purpose-item{
 
-    flex:1;
-
-    background:#ffffff;
-
-    border:1px solid #E2E8F0;
+    background:#fff;
 
     border-radius:18px;
 
-    padding:35px 28px;
+    padding:35px;
 
+    border:1px solid #E2E8F0;
+
+    transition:.35s;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
     text-align:center;
-
-    transition:0.35s ease;
 }
 
 .purpose-item:hover{
 
-    transform:translateY(-8px);
+    transform:translateY(-10px);
 
-    box-shadow:
-    0 18px 35px rgba(37,99,235,.14);
+    box-shadow:0 20px 40px rgba(37,99,235,.12);
+}
+
+.purpose-item i{
+
+    width:70px;
+    height:70px;
+
+    border-radius:50%;
+
+    background:#EFF6FF;
+
+    color:#2563EB;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-size:28px;
+
+    margin-bottom:22px;
 }
 
 .purpose-item h3{
 
+    font-size:28px;
+
     color:#2563EB;
 
-    font-size:30px;
-
-    margin-bottom:20px;
+    margin-bottom:18px;
 }
 
 .purpose-item p{
 
     color:#64748B;
 
-    font-size:16px;
-
     line-height:1.9;
+
+    font-size:16px;
 }
 
-/*==================================================
-            OPTIONAL ICON SUPPORT
-==================================================*/
+/*====================================================
+                LAPTOP
+====================================================*/
 
-.purpose-item i{
+@media(max-width:1100px){
 
-    font-size:42px;
+.purpose-content{
 
-    color:#2563EB;
-
-    margin-bottom:20px;
+    gap:20px;
 }
 
-/*==================================================
-                DESKTOP
-==================================================*/
+.purpose-item{
 
-@media(min-width:1400px){
-
-    .purpose-item{
-
-        padding:40px 35px;
-    }
-
-    .purpose-item p{
-
-        font-size:17px;
-    }
+    padding:30px;
+}
 
 }
 
-/*==================================================
+/*====================================================
                 TABLET
-==================================================*/
+====================================================*/
 
-@media(max-width:1024px){
+@media(max-width:900px){
 
-    .purpose-section{
+.purpose-content{
 
-        padding:0 4%;
-    }
+    grid-template-columns:1fr;
 
-    .purpose-content{
+    max-width:650px;
+}
 
-        gap:20px;
-    }
+.purpose-header h2{
 
-    .purpose-item{
-
-        padding:30px 22px;
-    }
+    font-size:38px;
+}
 
 }
 
-/*==================================================
+/*====================================================
                 MOBILE
-==================================================*/
+====================================================*/
 
 @media(max-width:768px){
 
-    .purpose-section{
+.purpose-section{
 
-        margin:60px auto;
+    padding:70px 20px;
+}
 
-        padding:0 20px;
-    }
+.purpose-header{
 
-    .purpose-header{
+    margin-bottom:40px;
+}
 
-        margin-bottom:40px;
-    }
+.purpose-header h2{
 
-    .purpose-content{
+    font-size:32px;
+}
 
-        flex-direction:column;
+.purpose-header p{
 
-        gap:20px;
-    }
+    font-size:16px;
+}
 
-    .purpose-item{
+.purpose-item{
 
-        width:100%;
+    padding:28px;
+}
 
-        padding:28px 22px;
-    }
+.purpose-item h3{
 
-    .purpose-item h3{
+    font-size:24px;
+}
 
-        font-size:26px;
-    }
+.purpose-item p{
 
-    .purpose-item p{
-
-        font-size:15px;
-    }
+    font-size:15px;
+}
 
 }
 
-/*==================================================
+/*====================================================
             SMALL MOBILE
-==================================================*/
+====================================================*/
 
 @media(max-width:480px){
 
-    .purpose-header h2{
+.purpose-section{
 
-        font-size:30px;
-    }
-
-    .purpose-header p{
-
-        font-size:15px;
-    }
-
-    .purpose-item{
-
-        padding:24px 18px;
-    }
-
-    .purpose-item h3{
-
-        font-size:24px;
-    }
-
-    .purpose-item i{
-
-        font-size:34px;
-    }
-
+    padding:60px 16px;
 }
 
-/*==================================================
-            SPACING HELPERS
-==================================================*/
+.purpose-header h2{
 
-.purpose-item p:last-child{
-
-    margin-bottom:0;
+    font-size:28px;
 }
 
-.purpose-item *{
+.purpose-item{
 
-    word-wrap:break-word;
+    padding:24px;
 }
 
-.purpose-section::after{
+.purpose-item i{
 
-    content:"";
-
-    display:block;
-
-    clear:both;
+    width:60px;
+    height:60px;
+    font-size:24px;
 }
-/*==================================================
-                JOIN ADIC SECTION
-==================================================*/
+
+}
+/*====================================================
+                    JOIN ADIC
+====================================================*/
 
 .join-adic{
 
     width:100%;
 
-    max-width:1400px;
+    padding:90px 6%;
 
-    margin:80px auto;
-
-    padding:0 5%;
+    background:#ffffff;
 
     display:grid;
 
@@ -1130,11 +1006,15 @@ ul{
     gap:70px;
 
     align-items:center;
+
+    max-width:1400px;
+
+    margin:auto;
 }
 
-/*==================================================
-                LEFT SIDE
-==================================================*/
+/*====================================================
+                LEFT CONTENT
+====================================================*/
 
 .join-left{
 
@@ -1142,6 +1022,8 @@ ul{
 }
 
 .join-tag{
+
+    display:inline-block;
 
     color:#2563EB;
 
@@ -1152,37 +1034,41 @@ ul{
     letter-spacing:2px;
 
     text-transform:uppercase;
+
+    margin-bottom:18px;
 }
 
 .join-left h2{
 
-    font-size:clamp(34px,4vw,48px);
+    font-size:44px;
 
     color:#0F172A;
 
-    margin:18px 0 22px;
+    line-height:1.2;
+
+    margin-bottom:20px;
 }
 
 .join-left p{
 
-    color:#64748B;
+    font-size:18px;
 
-    font-size:17px;
+    color:#64748B;
 
     line-height:1.9;
 
-    margin-bottom:35px;
+    margin-bottom:40px;
 }
 
-/*==================================================
+/*====================================================
                 BENEFITS
-==================================================*/
+====================================================*/
 
 .join-benefits{
 
     display:grid;
 
-    gap:20px;
+    gap:18px;
 }
 
 .benefit{
@@ -1193,7 +1079,7 @@ ul{
 
     gap:16px;
 
-    font-size:18px;
+    font-size:17px;
 
     font-weight:600;
 
@@ -1202,9 +1088,11 @@ ul{
 
 .benefit i{
 
-    width:42px;
+    width:48px;
 
-    height:42px;
+    height:48px;
+
+    border-radius:50%;
 
     display:flex;
 
@@ -1212,18 +1100,18 @@ ul{
 
     align-items:center;
 
-    border-radius:50%;
-
     background:#EFF6FF;
 
     color:#2563EB;
 
     font-size:18px;
+
+    flex-shrink:0;
 }
 
-/*==================================================
-                RIGHT FORM
-==================================================*/
+/*====================================================
+                FORM CARD
+====================================================*/
 
 .join-right{
 
@@ -1247,9 +1135,9 @@ ul{
     gap:20px;
 }
 
-/*==================================================
-                INPUT GROUP
-==================================================*/
+/*====================================================
+                    INPUTS
+====================================================*/
 
 .input-group{
 
@@ -1260,19 +1148,17 @@ ul{
 
 .input-group label{
 
+    margin-bottom:8px;
+
     font-size:15px;
 
     font-weight:600;
 
     color:#0F172A;
-
-    margin-bottom:8px;
 }
 
 .input-group input,
-
 .input-group textarea,
-
 .input-group select{
 
     width:100%;
@@ -1298,19 +1184,17 @@ ul{
 }
 
 .input-group input:focus,
-
 .input-group textarea:focus,
-
 .input-group select:focus{
 
     border-color:#2563EB;
 
-    box-shadow:0 0 0 3px rgba(37,99,235,.12);
+    box-shadow:0 0 0 4px rgba(37,99,235,.12);
 }
 
-/*==================================================
-                SUBMIT BUTTON
-==================================================*/
+/*====================================================
+                BUTTON
+====================================================*/
 
 .join-btn{
 
@@ -1324,7 +1208,7 @@ ul{
 
     background:#2563EB;
 
-    color:#ffffff;
+    color:#fff;
 
     font-size:16px;
 
@@ -1339,150 +1223,156 @@ ul{
 
     background:#1D4ED8;
 
-    transform:translateY(-2px);
+    transform:translateY(-3px);
 }
 
-/*==================================================
+/*====================================================
                 TABLET
-==================================================*/
+====================================================*/
 
 @media(max-width:992px){
 
-    .join-adic{
+.join-adic{
 
-        grid-template-columns:1fr;
+    grid-template-columns:1fr;
 
-        gap:45px;
-    }
+    gap:50px;
+}
 
-    .join-left{
+.join-left{
 
-        text-align:center;
-    }
+    text-align:center;
+}
 
-    .benefit{
+.benefit{
 
-        justify-content:center;
-    }
+    justify-content:center;
+}
+
+.join-right{
+
+    max-width:700px;
+
+    margin:auto;
+
+    width:100%;
+}
 
 }
 
-/*==================================================
+/*====================================================
                 MOBILE
-==================================================*/
+====================================================*/
 
 @media(max-width:768px){
 
-    .join-adic{
+.join-adic{
 
-        margin:60px auto;
+    padding:70px 20px;
+}
 
-        padding:0 20px;
-    }
+.join-left h2{
 
-    .join-left h2{
+    font-size:34px;
+}
 
-        font-size:32px;
-    }
+.join-left p{
 
-    .join-left p{
+    font-size:16px;
+}
 
-        font-size:16px;
-    }
+.join-right{
 
-    .join-right{
+    padding:25px;
+}
 
-        padding:25px;
-    }
+.join-form{
 
-    .join-form{
+    gap:16px;
+}
 
-        gap:16px;
-    }
+.input-group input,
+.input-group textarea,
+.input-group select{
 
-    .input-group input,
-
-    .input-group textarea,
-
-    .input-group select{
-
-        padding:13px;
-    }
+    padding:13px;
+}
 
 }
 
-/*==================================================
-                SMALL MOBILE
-==================================================*/
+/*====================================================
+            SMALL MOBILE
+====================================================*/
 
 @media(max-width:480px){
 
-    .join-adic{
+.join-adic{
 
-        padding:0 15px;
-    }
+    padding:60px 16px;
+}
 
-    .join-left h2{
+.join-left h2{
 
-        font-size:28px;
-    }
+    font-size:28px;
+}
 
-    .benefit{
+.join-left p{
 
-        font-size:16px;
+    font-size:15px;
+}
 
-        gap:12px;
-    }
+.benefit{
 
-    .benefit i{
+    font-size:15px;
 
-        width:36px;
+    gap:12px;
+}
 
-        height:36px;
+.benefit i{
 
-        font-size:16px;
-    }
+    width:40px;
 
-    .join-right{
+    height:40px;
 
-        padding:20px;
-    }
+    font-size:16px;
+}
 
-    .join-btn{
+.join-right{
 
-        font-size:15px;
+    padding:20px;
+}
 
-        padding:14px;
-    }
+.join-btn{
+
+    font-size:15px;
+}
 
 }
-/*==================================================
-                CONTACT SECTION
-==================================================*/
+/*====================================================
+                    CONTACT
+====================================================*/
 
 .contact-section{
 
     width:100%;
 
-    max-width:1400px;
+    padding:0px 6%;
 
-    margin:80px auto;
-
-    padding:0 5%;
+    background:#f8fafc;
 }
-
-/*==================================================
-                CONTACT HEADER
-==================================================*/
 
 .contact-header{
 
     text-align:center;
 
-    margin-bottom:60px;
+    max-width:750px;
+
+    margin:0 auto 60px;
 }
 
 .contact-header span{
+
+    display:inline-block;
 
     color:#2563EB;
 
@@ -1493,42 +1383,48 @@ ul{
     letter-spacing:2px;
 
     text-transform:uppercase;
+
+    margin-bottom:15px;
 }
 
 .contact-header h2{
 
-    font-size:clamp(34px,4vw,46px);
+    font-size:44px;
 
     color:#0F172A;
 
-    margin:15px 0;
+    margin-bottom:18px;
 }
 
 .contact-header p{
 
-    max-width:700px;
-
-    margin:auto;
+    font-size:18px;
 
     color:#64748B;
 
     line-height:1.8;
-
-    font-size:17px;
 }
 
-/*==================================================
-                CONTACT GRID
-==================================================*/
+/*====================================================
+                GRID
+====================================================*/
 
 .contact-grid{
+
+    max-width:1200px;
+
+    margin:auto;
 
     display:grid;
 
     grid-template-columns:repeat(3,1fr);
 
-    gap:30px;
+    gap:28px;
 }
+
+/*====================================================
+                CARD
+====================================================*/
 
 .contact-box{
 
@@ -1542,23 +1438,39 @@ ul{
 
     text-align:center;
 
-    transition:.3s;
+    transition:.35s;
+
+    box-shadow:0 6px 18px rgba(0,0,0,.05);
 }
 
 .contact-box:hover{
 
     transform:translateY(-8px);
 
-    box-shadow:0 15px 35px rgba(37,99,235,.15);
+    box-shadow:0 20px 40px rgba(37,99,235,.12);
 }
 
 .contact-box i{
 
-    font-size:36px;
+    width:70px;
+
+    height:70px;
+
+    margin:auto auto 20px;
+
+    border-radius:50%;
+
+    background:#EFF6FF;
 
     color:#2563EB;
 
-    margin-bottom:18px;
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:28px;
 }
 
 .contact-box h3{
@@ -1574,7 +1486,7 @@ ul{
 
     color:#64748B;
 
-    text-decoration:none;
+    font-size:16px;
 
     word-break:break-word;
 
@@ -1586,151 +1498,308 @@ ul{
     color:#2563EB;
 }
 
-
-/*==================================================
+/*====================================================
                 TABLET
-==================================================*/
+====================================================*/
 
-@media(max-width:992px){
+@media(max-width:900px){
 
-    .contact-grid{
+.contact-grid{
 
-        grid-template-columns:repeat(2,1fr);
-    }
+    grid-template-columns:repeat(2,1fr);
+}
 
 }
 
-/*==================================================
+/*====================================================
                 MOBILE
-==================================================*/
+====================================================*/
 
 @media(max-width:768px){
 
-    .contact-section{
+.contact-section{
 
-        margin:60px auto;
+    padding:70px 20px;
+}
 
-        padding:0 20px;
-    }
+.contact-header{
 
-    .contact-header{
+    margin-bottom:40px;
+}
 
-        margin-bottom:40px;
-    }
+.contact-header h2{
 
-    .contact-grid{
+    font-size:34px;
+}
 
-        grid-template-columns:repeat(3,1fr);
+.contact-header p{
 
-        gap:12px;
-    }
+    font-size:16px;
+}
 
-    .contact-box{
+.contact-grid{
 
-        padding:15px 8px;
-    }
+    grid-template-columns:1fr;
 
-    .contact-box i{
+    gap:20px;
+}
 
-        font-size:24px;
+.contact-box{
 
-        margin-bottom:8px;
-    }
-
-    .contact-box h3{
-
-        font-size:14px;
-
-        margin-bottom:6px;
-    }
-
-    .contact-box a{
-
-        font-size:11px;
-
-        line-height:1.4;
-
-        word-break:break-word;
-    }
+    padding:28px;
+}
 
 }
 
-/*==================================================
+/*====================================================
             SMALL MOBILE
-==================================================*/
+====================================================*/
 
 @media(max-width:480px){
 
-    .contact-grid{
+.contact-section{
 
-        grid-template-columns:repeat(3,1fr);
-
-        gap:8px;
-    }
-
-    .contact-box{
-
-        padding:12px 5px;
-    }
-
-    .contact-box i{
-
-        font-size:20px;
-    }
-
-    .contact-box h3{
-
-        font-size:12px;
-    }
-
-    .contact-box a{
-
-        font-size:10px;
-    }
-
+    padding:60px 16px;
 }
 
-/*==================================================
-                UTILITIES
-==================================================*/
+.contact-header h2{
 
-section{
-
-    scroll-margin-top:100px;
+    font-size:28px;
 }
 
-html{
+.contact-box{
 
-    scroll-behavior:smooth;
+    padding:24px;
 }
+
+.contact-box i{
+
+    width:60px;
+
+    height:60px;
+
+    font-size:24px;
+}
+
+.contact-box h3{
+
+    font-size:20px;
+}
+
+.contact-box a{
+
+    font-size:15px;
+}
+
+}
+/*====================================================
+                GLOBAL UTILITIES
+====================================================*/
+
 
 body{
-
     overflow-x:hidden;
 }
 
-img{
-
-    max-width:100%;
-
-    height:auto;
-
-    display:block;
+section{
+    scroll-margin-top:100px;
 }
 
-button{
 
+button,
+input,
+textarea,
+select{
     font-family:inherit;
 }
+
+/*====================================================
+                COMMON TRANSITIONS
+====================================================*/
+
+.card,
+.purpose-item,
+.contact-box,
+.join-right,
+.hero-image img{
+
+    transition:all .35s ease;
+}
+
+/*====================================================
+                LINKS
+====================================================*/
+
+a{
+
+    transition:color .3s ease;
+}
+
+/*====================================================
+                FORM PLACEHOLDERS
+====================================================*/
+
+::placeholder{
+
+    color:#94A3B8;
+
+    opacity:1;
+}
+
+/*====================================================
+                INPUT STATES
+====================================================*/
 
 input,
 textarea,
 select{
 
-    font-family:inherit;
+    background:#fff;
+}
+
+input:focus,
+textarea:focus,
+select:focus{
+
+    outline:none;
+}
+
+/*====================================================
+                BUTTON DEFAULT
+====================================================*/
+
+button{
+
+    cursor:pointer;
+}
+
+/*====================================================
+                TEXT SELECTION
+====================================================*/
+
+::selection{
+
+    background:#2563EB;
+
+    color:#fff;
+}
+
+/*====================================================
+                SCROLLBAR
+====================================================*/
+
+::-webkit-scrollbar{
+
+    width:10px;
+}
+
+::-webkit-scrollbar-track{
+
+    background:#F1F5F9;
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#2563EB;
+
+    border-radius:20px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#1D4ED8;
+}
+
+/*====================================================
+                ANIMATIONS
+====================================================*/
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(40px);
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+    }
+
+}
+
+.hero-copy,
+.hero-image,
+.card,
+.purpose-item,
+.contact-box,
+.join-right{
+
+    animation:fadeUp .8s ease both;
+}
+
+/*====================================================
+                LARGE SCREENS
+====================================================*/
+
+@media(min-width:1600px){
+
+.hero,
+.why-container,
+.purpose-content,
+.join-adic,
+.contact-grid{
+
+    max-width:1450px;
+
+    margin:auto;
+}
+
+}
+
+/*====================================================
+            EXTRA SMALL DEVICES
+====================================================*/
+
+@media(max-width:360px){
+
+.hero h1{
+
+    font-size:28px;
+}
+
+.section-title p,
+.purpose-header h2,
+.contact-header h2,
+.join-left h2{
+
+    font-size:26px;
+}
+
+.hero p,
+.why-content p,
+.purpose-header p,
+.contact-header p,
+.join-left p{
+
+    font-size:15px;
+}
+
+.card,
+.purpose-item,
+.contact-box{
+
+    padding:20px;
+}
+
 }
 </style>
 </head>
+<body>
 <header class="navbar">
     <div class="logo">
         
@@ -2039,5 +2108,6 @@ select{
     </div>
 
 </section>
+    
 </body>
 </html>
