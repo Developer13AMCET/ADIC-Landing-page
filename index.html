@@ -769,7 +769,7 @@ section{
 .purpose-section{
     width:100%;
     padding:90px 6%;
-    background:#f8fafc;
+    background:white;
 }
 
 .purpose-header{
@@ -995,7 +995,7 @@ section{
 
     width:100%;
 
-    padding:90px 6%;
+    padding:0px 6%;
 
     background:#ffffff;
 
@@ -1356,9 +1356,9 @@ section{
 
     width:100%;
 
-    padding:0px 6%;
+    padding:50px 6%;
 
-    background:#f8fafc;
+    background:white;
 }
 
 .contact-header{
@@ -1819,8 +1819,8 @@ button{
     <ul class="nav-links">
         <li><a href="#home" class="active">Home</a></li>
         <li><a href="#vision">Why We Exist</a></li>
-        <li><a href="domains.html">Technology Domain</a></li>
-        <li><a href="Projects.html">Projects</a></li>
+        <li><a href="domain.html">Technology Domain</a></li>
+        <li><a href="projects.html">Projects</a></li>
         <li><a href="#join">Join ADIC</a></li>
         <li><a href="#contact">Contact</a></li>
     </ul>
@@ -2014,37 +2014,39 @@ button{
 <div class="join-right">
 
         <form class="join-form"
-    action="https://formsubmit.co/monikagopi3@gmail.com"
+        action="https://formsubmit.co/monikagopi3@gmail.com"
     method="POST">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_next" value="index.html">
 
             <div class="input-group">
                 <label>Full Name</label>
-                <input type="text" placeholder="Enter your name">
+                <input type="text" name="Full name" placeholder="Enter your name">
             </div>
 
             <div class="input-group">
                 <label>Department</label>
-                <input type="text" placeholder="Department">
+                <input type="text" name="Department" placeholder="Department">
             </div>
 
             <div class="input-group">
                 <label>Projects Worked On</label>
-                <textarea rows="4" placeholder="Describe your projects"></textarea>
+                <textarea rows="4" name="projects worked on" placeholder="Describe your projects"></textarea>
             </div>
 
             <div class="input-group">
                 <label>Phone Number</label>
-                <input type="tel" placeholder="+91 XXXXX XXXXX">
+                <input type="tel" name="Phone number" placeholder="+91 XXXXX XXXXX">
             </div>
 
             <div class="input-group">
                 <label>Email Address</label>
-                <input type="email" placeholder="example@gmail.com">
+                <input type="email" name="Email" placeholder="example@gmail.com">
             </div>
 
             <div class="input-group">
                 <label>Area of Interest</label>
-                <select>
+                <select name="Area of interest">
                     <option>Select Domain</option>
                     <option>Web Development</option>
                     <option>UI/UX Design</option>
